@@ -1,0 +1,105 @@
+<form [formGroup]="userForm" (ngSubmit)="ref.valid && onFormSubmit()" #ref="ngForm">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input
+      type="text"
+      id="username"
+      class="form-control"
+      formControlName="username"
+    />
+    <!-- username validation errors -->
+    <div *ngIf="username.invalid &&(username.touched || username.dirty || ref.submitted)">
+        <p class="text-danger" *ngIf="username.errors?.['required']">
+          *Username is required
+        </p>
+        <p class="text-danger" *ngIf="username.errors?.['minlength']">
+          *Min length of 4 chars required
+        </p>
+        <p class="text-danger" *ngIf="username.errors?.['maxlength']">
+          *Max length username is  6 chars 
+        </p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">EMAIL</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      formControlName="password"
+    />
+  </div>
+  <!-- state selection -->
+  <div class="mb-3">
+    <label>Choose your state</label>
+    <select formControlName="state" class="form-select">
+      <option value="telangana">Telangana</option>
+      <option value="andhra pradesh">Andhra pradesh</option>
+      <option value="tamilnadu">Tamilnadu</option>
+    </select>
+  </div>
+  <!-- chebox skills -->
+  <div class="mb-3">
+    <label>Select your skills</label>
+    <!-- html -->
+    <div class="form-check">
+      <input
+        type="checkbox"
+        id="html"
+        class="form-check-input"
+        formControlName="html"
+      />
+      <label for="html" class="form-check-label">HTML</label>
+    </div>
+    <!-- js -->
+    <div class="form-check">
+      <input
+        type="checkbox"
+        id="js"
+        class="form-check-input"
+        formControlName="js"
+      />
+      <label for="js" class="form-check-label">JavaScript</label>
+    </div>
+  </div>
+
+  <!-- radio gender -->
+  <div class="mb-3">
+    <label>Select your skills</label>
+    <!-- html -->
+    <div class="form-check">
+      <input
+        type="radio"
+        id="male"
+        class="form-check-input"
+        formControlName="gender"
+        value="male"
+      />
+      <label for="male" class="form-check-label">Male</label>
+    </div>
+    <!-- js -->
+    <div class="form-check">
+      <input
+        type="radio"
+        id="female"
+        class="form-check-input"
+        formControlName="gender"
+        value="female"
+      />
+      <label for="female" class="form-check-label">Female</label>
+    </div>
+  </div>
+
+  <!-- feedback -->
+  <div class="mb-3">
+    <label for="feedback" class="form-label">Feedback</label>
+    <textarea
+      name=""
+      id=""
+      rows="5"
+      class="form-control"
+      formControlName="feedback"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Login</button>
+</form>

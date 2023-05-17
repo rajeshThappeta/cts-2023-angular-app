@@ -1,0 +1,11 @@
+.single-product{
+    width: 300px;
+    box-shadow: 1px 2px 10px gray;
+    padding: 10px;
+}
+
+.single-product img{
+    width: 200px;
+    height: 200px;
+   
+}

@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Creating component manually
+
+1. Create a folder and three filkes into it (class,template,css)
+2. Register new componnet to a module by adding class name to declartions array

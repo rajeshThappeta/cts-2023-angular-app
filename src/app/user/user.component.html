@@ -1,0 +1,50 @@
+<div>
+  <h1 class="text-center text-info display-3">Add New User</h1>
+  <!-- user registration form -->
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <!-- username -->
+    <div class="mb-3">
+      <input type="text" 
+            class="form-control" 
+            placeholder="Username"
+            formControlName="username" />
+    </div>
+     <!-- dob -->
+     <div class="mb-3">
+        <input type="date" 
+              class="form-control" 
+              placeholder="Date of birth"
+              formControlName="dob" />
+      </div>
+       <!-- username -->
+    <div class="mb-3">
+        <input type="email" 
+              class="form-control" 
+              placeholder="Email"
+              formControlName="email" />
+      </div>
+      <!-- submit -->
+      <button class="btn btn-info" type="submit">Add User</button>
+  </form>
+
+
+  <!-- users table -->
+  <table class="table text-center mt-5">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Date of birth</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let userObj of usersList">
+            <td>{{userObj.id}}</td>
+            <td>{{userObj.username}}</td>
+            <td>{{userObj.dob}}</td>
+            <td>{{userObj.email}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+<div>
+    <p class="display-6 text-primary">Add task</p>
+    <!-- form -->
+    
+     <form [formGroup]="taskForm" (ngSubmit)="addTask()" class="w-75 mx-auto">
+        <input type="text" 
+                formControlName="taskName" 
+                 class="form-control mb-3" 
+                 placeholder="Add new task...">
+
+        <button class="btn btn-secondary" type="submit">Add task</button>
+    </form>
+</div>
